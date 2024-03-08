@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="mediaqueries.css">
 </head>
   <body>
-    <div class="loader">
+    <!-- <div class="loader">
         <h1 class="counter">29</h1>
   
         <div class="site-teaser">
@@ -22,9 +22,15 @@
           <div class="circle-inner-rotator"></div>
           <div class="block"></div>
         </div>
-    </div>
+    </div> -->
 
     <div class="container">
+      <div class="marquee">
+        <span>
+          carlo bebero / carlo bebero / carlo bebero / carlo bebero / carlo bebero / carlo bebero / carlo bebero / carlo bebero / carlo bebero / carlo bebero / carlo bebero / carlo bebero / carlo bebero / carlo bebero / carlo bebero /
+        </span>
+      </div>
+      <div class="line"></div>
 
     
     <!-- <h1 class="hero-title">purity of noise</h1> -->
@@ -33,11 +39,11 @@
     <!-- <a href="#"><img id="logo" src="assets/Logo.png" alt="Carlo's Logo"></a> -->
     <div class="nav-wrapper">
         <nav>
-          <div class="info">
+          <div id="info">
             <p>Portfolio Vol. 1</p>
           </div>
           <div class="copyright">
-            <p>&#169; Carlo Bebero. 2023<span>All Rights Reserved.</span></p>
+            <p>&#169; <small>Carlo Bebero. 2024 <span>All Rights Reserved. </span></small></p>
           </div>
           <div class="toggle-btn">
             <button
@@ -50,17 +56,22 @@
           <div class="overlay-menu">
             <div class="menu-item">
               <div class="menu-item-name">
-                <p id="active"><a href="#">Index</a></p>
-              </div>
-            </div>
-            <div class="menu-item">
-              <div class="menu-item-name">
-                <p><a href="#">Work</a></p>
+                <p id="active"><a href="#">Home</a></p>
               </div>
             </div>
             <div class="menu-item">
               <div class="menu-item-name">
                 <p><a href="#">About</a></p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-name">
+                <p><a href="#">Projects</a></p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-name">
+                <p><a href="contact.html">Contact</a></p>
               </div>
             </div>
           </div>
@@ -76,6 +87,7 @@
       <!-- svg overlay -->  
       <div class="cursor"></div>
   </div>
+  
     
     
 
@@ -89,7 +101,7 @@
             <p class="section__text__p2">Frontend Developer</p>
             <div class="btn-container">
                 <button class="btn btn-color-2" onclick="window.open('.assets/resume-example.pdf')">Download CV</button>
-                <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Me</button>
+                <button class="btn btn-color-1"><a href="contact.html">Contact Me</a></button>
             </div>
             <div id="socials-container">
                 <img src="./assets/linkedin.png" alt="My linkedIn profile" class="icon" onclick="location.href='https://linkedin.com/'">

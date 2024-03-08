@@ -37,6 +37,10 @@
   }
   
   /* primary nav */
+  #info {
+    left: 45px;
+    position: fixed;
+  }
   .copyright {
     /* writing-mode: sideways-lr ; */
     position: fixed;
@@ -47,6 +51,15 @@
   .copyright span {
     writing-mode: vertical-lr;
   }
+  #home {
+    position: fixed;
+    top: 35px;
+    display: flex;
+    right: 35px;
+    height: 30px;
+    width: 30px;  
+    
+    }
   #logo {
     position: fixed;
     bottom: 35px;
@@ -73,7 +86,7 @@
     display: flex;
     justify-content: center;
     gap: 5rem;
-    height: 100vh;
+    height: 60vh;
 }
 
 .section__pic-container {
@@ -381,11 +394,13 @@ nav > div {
 .menu-item p {
   position: relative;
   text-align: center;
-  font-family: "Sorts Mill Goudy", serif;
+  text-transform: uppercase;
+  font-family: "Ojuju", sans-serif;
   font-size: 10vw;
   line-height: 110%;
   will-change: transform;
   transition: letter-spacing 0.3s;
+  z-index: 0;
 }
 
 .menu-item p:hover {
@@ -420,4 +435,156 @@ nav > div {
   }
 }
 
-  
+/* CONTACT ME  ****************************************************************** CONTACT ME */
+
+.marquee {
+  width: 100%;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  /* padding-top: -10rem; */
+}
+
+.marquee span {
+  font-family: "Ojuju", sans-serif;
+  font-weight: 700;
+  color:  #c03f13;
+  font-size: 10em;
+  text-transform: uppercase;
+  display: inline-block;
+  padding-left: -10%;
+  animation: marquee-animation 80s linear infinite;
+}
+.line {
+  border-bottom: 1px solid #000000;
+}
+.dotted {
+  border-bottom: 1px dotted #000000;
+}
+
+@keyframes marquee-animation {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+.col {
+  width: 50%;
+  padding: 1em 3em;
+}
+
+.contact-section h3 {
+  text-transform: uppercase;
+  color: var(--overlay-bg);
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.contact-section span {
+  text-transform: uppercase;
+}
+
+.contact-details p {
+  font-size: 40px;
+  line-height: 60px;
+  padding-top: 0.8em;
+}
+
+.item {
+  padding: 4em 0 0 0;
+}
+
+.contact-info {
+  display: flex;
+}
+
+.address {
+  padding-left: 4em;
+}
+
+input {
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--overlay-bg);
+  font-size: 24px;
+  padding: 0.4em;
+  width: 100%;
+  color: var(--overlay-bg);
+  margin-right: 0.4em;
+}
+.row {
+  display: flex;
+  margin: 2em 0 !important;
+}
+.mainLoginInput::-webkit-input-placeholder { 
+  font-family: "Ojuju", sans-serif;
+  color: var(--overlay-bg);
+  font-size: 24px;
+}
+
+.mainLoginInput:-moz-placeholder { 
+  font-family: "Ojuju", sans-serif;
+  color: var(--overlay-bg);
+  font-size: 24px;
+}
+
+input[type="text"]
+{
+    font-size:24px;
+    font-family: "Ojuju", sans-serif;
+    color: var(--overlay-bg);
+}
+
+textarea#message {
+  width: 100%;
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--overlay-bg);
+  font-size: 24px;
+  padding: 0.4em;
+  width: 100%;
+  color: var(--overlay-bg);
+  font-family: "Ojuju", sans-serif;
+}
+
+.submit {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.submit a {
+  text-decoration: none;
+  color: var(--overlay-bg);
+  font-family: "Monument Extended";
+  font-size: 60px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.send-icon {
+  font-size: 60px;
+}
+
+@media (min-width: 900px) {
+  html,
+  body {
+    height: 100%;
+  }
+
+  .contact-section {
+    width: 100%;
+    display: flex;
+  }
+}
+
+@media (max-width: 900px) {
+  .col {
+    width: 100%;
+  }
+}
