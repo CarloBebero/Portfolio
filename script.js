@@ -1,138 +1,178 @@
-// function toggleMenu() {
-//     const menu = document.querySelector(".menu-links");
-//     const icon = document.querySelector(".hamburger-icon");
-//     menu.classList.toggle("open");
-//     icon.classList.toggle("open");
-// }
+// setup
 
-const tl = gsap.timeline({ paused:true });
-let path = document.querySelector("path");
-let spanBefore = CSSRulePlugin.getRule("#humburger span:before");
+(function () {
 
-gsap.set(spanBefore, { background: "#000" });
-gsap.set(".menu", { visibility: "hidden" });
+    const cursor = document.querySelector('.cursor');
 
-function revealMenu() {
-    revealMenuItems();
-
-    const hamburger = document.getElementById("hamburger");
-    const toggleBtn = document.getElementById("toggle-btn");
-
-    toggleBtn.onclick = function (e) {
-        hamburger.classList.toggle("active");
-        tl.reversed(!tl.reversed());
-
+    const editCursor = e => {
+          const { clientX: x, clientY: y } = e;
+          cursor.style.left = x + 'px';
+          cursor.style.top = y + 'px';
     };
-}
+    
+    window.addEventListener('mousemove', editCursor);
 
-revealMenu();
-
-function revealMenuItems() {
-    const start = "M0 502S175 272 500 272s5000 230 500 230V0H0Z";
-    const end = "M0,1005S175,995,500,995s500,500,5V0H0Z";
-
-    const power2 = "power2.inOut";
-    const power4 = "power4.inOut";
+})();
 
 
-    tl.to("#hamburger", 1.25, {
-        marginTop: "-5px",
-        x: -40,
-        y: 40,
-        ease: power4,
-    });
+function startLoader() {
+    var counterElement = document.querySelector(".counter");
+    var currentValue = 0;
 
-    tl.to("#hamburger span", 1, 
+    function updateCounter() {
+      if (currentValue === 100) {
+        return;
+      }
+
+      currentValue += Math.floor(Math.random() * 10) + 1;
+
+      if (currentValue > 100) {
+        currentValue = 100;
+      }
+
+      counterElement.textContent = currentValue + "%";
+
+      var delay = Math.floor(Math.random() * 200) + 250;
+      setTimeout(updateCounter, delay);
+    }
+
+    updateCounter();
+  }
+
+  startLoader();
+
+  gsap.from(".circles", 2, {
+    top: "-100%",
+    ease: "elastic.out",
+    delay: 0.5,
+  });
+
+  gsap.to(".circle-inner", 1, {
+    width: "75px",
+    height: "75px",
+    ease: "power4.inOut",
+    delay: 2,
+  });
+
+  gsap.to(".circle-inner-rotator", 1, {
+    scale: 1,
+    ease: "power4.inOut",
+    delay: 2.5,
+  });
+
+  gsap.to(".circles", 1.5, {
+    rotation: 360,
+    ease: "power4.inOut",
+    delay: 3,
+  });
+
+  gsap.to(".block", 0.75, {
+    display: "block",
+    height: "200px",
+    ease: "power4.inOut",
+    delay: 4,
+  });
+
+  gsap.to(".block", 0.75, {
+    width: "800px",
+    ease: "power4.inOut",
+    delay: 4.5,
+  });
+
+  gsap.fromTo(
+    ".container",
     {
-        background: "#e2e2dc",
-        ease: power2,
+      duration: 2,
+      left: "100%",
+      scale: 0.5,
+      ease: "power4.inOut",
+      delay: 4,
     },
-    "<"
-    );
-    tl.to(spanBefore, 1, 
     {
-        background: "#e2e2dc",
-        ease: power2,
-    },
-    "<"
-    );
+      duration: 2,
+      left: "50%",
+      scale: 0.5,
+      transform: "translateX(-50%)",
+      ease: "power4.inOut",
+      delay: 4,
+    }
+  );
 
-    tl.to(".btn .btn-outline", 1.25, {
-        x: -40,
-        y: 40,
-        width: "140px",
-        height: "140px",
-        border: "1px solid #e2e2dc",
-        ease: power4,
-    },
-    "<"
-    );
+  gsap.to(".block", 1.5, {
+    width: "0px",
+    ease: "power4.inOut",
+    delay: 5,
+  });
 
+  gsap.to(".block", 0.75, {
+    display: "block",
+    height: "0px",
+    ease: "power4.inOut",
+    delay: 6,
+  });
 
+  gsap.to(".circles", 1.5, {
+    rotation: 0,
+    ease: "power4.inOut",
+    delay: 6.5,
+  });
 
+  gsap.to(".loader", 2.5, {
+    scale: 0,
+    ease: "power4.inOut",
+    delay: 7,
+  });
 
+  gsap.to(".container", 2, {
+    scale: 1,
+    ease: "power4.inOut",
+    delay: 7.5,
+  });
+  
+        document.addEventListener("DOMContentLoaded", function () {
+          let activeItemIndicator = CSSRulePlugin.getRule(".menu-item p#active::after");
+          const toggleButton = document.querySelector(".burger");
+          let isOpen = false;
 
+          gsap.set(".menu-item p", {y: 225})
 
- 
+          const timeline = gsap.timeline({ paused: true });
 
+          timeline.to(".overlay", {
+            duration: 1.5,
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            ease: "power4.inOut"
+          });
 
+          timeline.to(".menu-item p", {
+            duration: 1.5,
+            y: 0,
+            stagger: 0.2,
+            ease: "power4.out"
+          }, "-=1");
 
+          timeline.to(activeItemIndicator, {
+            width: "100%",
+            duration: 1,
+            ease: "power4.out",
+            delay: 0.5
+          }, "<");
 
-    // tl.to("#hamburger", 1.25, {
-    //     marginTop: "-5px",
-    //     x: -40,
-    //     y: 40,
-    //     ease: power4,
-    // });
+          timeline.to(".sub-nav", {
+            bottom: "10%",
+            opacity: 1,
+            duration: 0.5,
+            delay: 0.5
+          }, "<");
 
-    // tl.to("#hamburger span", 1, {
-    //     background: "#e2e2dc",
-    //     ease: power2,
-    // },
-    // "<"
-    // );
-    // tl.to(spanBefore, 1, {
-    //     marginTop: "-5px",
-    //     x: -40,
-    //     y: 40,
-    //     ease: power4, 
-    // });
- 
-    // tl.to("#hamburger span", 1, {
-    //     background: "#e2e2dc",
-    //     ease: power2,
-    // },
-    // "<"
-    // );
+          toggleButton.addEventListener("click", function () {
+            if (isOpen) {
+              timeline.reverse();
+            } else {
+              timeline.play();
+            }
+            isOpen = !isOpen;
+          });
+        });
 
-    tl.to(path, 0.8, {
-        attr: {
-            d: start
-        }, ease: Power2.easeIn,
-    }, "<"). to (path, 0.8, {
-        attr: {
-            d: end
-        }, ease: Power2.easeIn,
-    }, 
-    "-0.5"
-    );
-
-    tl.to(
-        ".menu",
-        1,
-        {
-            visibility: "visible",
-        },
-        "-=0.5"
-    );
-
-    tl.to(".menu-item > a", 1, {
-        top: 0,
-        ease: "power3.out",
-        stagger: {
-            amount: 0.5,
-        },
-    },
-    "-=1"
-    ).reverse();
-}
+  

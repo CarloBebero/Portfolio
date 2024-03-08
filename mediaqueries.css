@@ -1,8 +1,129 @@
-/* @media screen and (max-width: 1200px) {
-    #desktop-nav {
-        display: none;
+@media screen and (max-width: 1400px) {
+    #profile {
+        height: 100vh;
+        margin-bottom: 6rem;
     }
-    #hamburger-nav {
+}
+
+@media screen and (max-width: 1200px) {
+    #profile, .section-container {
+        display: block;
+    }
+
+    section, .section-container {
+        height: fit-content;
+    }
+
+    section {
+        margin: 0 5%;
+    }
+
+    .section__pic-container {
+        width: 275px;
+        height: 275px;
+        margin: 0 auto 2rem;
+    }
+
+    .overlay {
+        width: 100vw;
+        height: 200vh;
+    }
+
+    .primary-menu a {
+        font-size: 118px;
+    }
+
+    .primary-menu a:hover {
+        font-size: 114px;
+    }
+
+    .primary-menu .menu-container .wrapper .menu-item:nth-child(1) a,
+    .primary-menu .menu-container .wrapper .menu-item:nth-child(3) a {
+        margin-left: 1.3em;
+    }
+
+    .primary-menu .menu-container .wrapper .menu-item:nth-child(2) a,
+    .primary-menu .menu-container .wrapper .menu-item:nth-child(4) a {
+        margin-left: .3em;
+    }
+
+    .primary-menu .menu-container .wrapper {
+        width: 200%;
+        height: 100%;
+    }
+
+    .secondary-menu .menu-item a {
+        font-size: .1px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #profile {
+        padding-top: 150px;
+        height: 50vh;
+        margin-bottom: 0;
+    }
+
+    .menu {
+        width: 200vw;
+        height: 100vh;
+    }
+
+    .overlay {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .primary-menu a {
+        font-size: 70px;
+    }
+
+    .primary-menu a:hover {
+        font-size: 70px;
+    }
+
+    .primary-menu .menu-container .wrapper .menu-item:nth-child(1) a,
+    .primary-menu .menu-container .wrapper .menu-item:nth-child(3) a {
+        margin-left: 3em;
+    }
+
+    .primary-menu .menu-container .wrapper .menu-item:nth-child(2) a,
+    .primary-menu .menu-container .wrapper .menu-item:nth-child(4) a {
+        margin-left: 3.5em;
+    }
+
+    .primary-menu .menu-container .wrapper {
+        width: 200%;
+        height: 200%;
+    }
+
+    .secondary-menu .menu-item a {
+        font-size: .1px;
+    }
+
+    #toggle-btn {
+        width: 100px;
+        height: 100px;
         display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2em;
+        z-index: 2;
+        cursor: pointer;
     }
-} */
+
+    .section__pic-container {
+        /* top: 300px; */
+        width: auto;
+        height: 50vw;
+        justify-content: center;
+    }
+
+    .section__text-p2 {
+        font-size: 1.25rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+}

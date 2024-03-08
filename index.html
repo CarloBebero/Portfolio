@@ -4,84 +4,80 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carlo Bebero</title>
+    <title>C A R L O  B E B E R O</title>
+    <link rel="icon" href="./assets/Logo.png">
     <link rel="stylesheet" href="css.css" />
-  </head>
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
   <body>
+    <div class="loader">
+        <h1 class="counter">29</h1>
+  
+        <div class="site-teaser">
+          <span>Welcome To My Portfolio Website, <br>Carlo</span>
+        </div>
+        <div class="circles">
+          <div class="circle circle-outer"></div>
+          <div class="circle circle-inner"></div>
+          <div class="circle-inner-rotator"></div>
+          <div class="block"></div>
+        </div>
+    </div>
+
+    <div class="container">
+
+    
     <!-- <h1 class="hero-title">purity of noise</h1> -->
 
     <!-- toggle btn -->
-    <div class="btn" id="toggle-btn">
-      <div class="btn-outline btn-outline-1"></div>
-      <div class="btn-outline btn-outline-2"></div>
-      <div id="hamburger">
-        <span></span>
-      </div>
-    </div>
-
-    <!-- svg overlay -->
-    <div class="overlay">
-      <svg viewBox="0 0 1000 1000">
-        <path d="M0 2S175 1 500 1s500 1 500 1V0H0Z"></path>
-      </svg>
-    </div>
-
-    <!-- menu items -->
-    <div class="menu">
-      <div class="primary-menu">
-        <div class="menu-container">
-          <div class="wrapper">
+    <!-- <a href="#"><img id="logo" src="assets/Logo.png" alt="Carlo's Logo"></a> -->
+    <div class="nav-wrapper">
+        <nav>
+          <div class="info">
+            <p>Portfolio Vol. 1</p>
+          </div>
+          <div class="copyright">
+            <p>&#169; Carlo Bebero. 2023<span>All Rights Reserved.</span></p>
+          </div>
+          <div class="toggle-btn">
+            <button
+              class="burger"
+              onclick="this.classList.toggle('active');"
+            ></button>
+          </div>
+        </nav>
+        <div class="overlay">
+          <div class="overlay-menu">
             <div class="menu-item">
-              <a href="#"><span>I</span>Home</a>
-              <div class="menu-item-revealer"></div>
-            </div>
-
-            <div class="menu-item">
-              <a href="#"><span>II</span>About</a>
-              <div class="menu-item-revealer"></div>
-            </div>
-
-            <div class="menu-item">
-                <a href="#"><span>III</span>Projects</a>
-                <div class="menu-item-revealer"></div>
+              <div class="menu-item-name">
+                <p id="active"><a href="#">Index</a></p>
               </div>
-
+            </div>
             <div class="menu-item">
-              <a href="#"><span>IV</span>Contact</a>
-              <div class="menu-item-revealer"></div>
+              <div class="menu-item-name">
+                <p><a href="#">Work</a></p>
+              </div>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item-name">
+                <p><a href="#">About</a></p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+       </div>
+       <div class="footer">
+        <!-- <div class="copyright">
+          <p>&#169; Carlo Bebero. 2023<span>All Rights Reserved.</span></p>
+        </div> -->
+        <a href="#"><img id="logo" src="assets/Logo.png" alt="Carlo's Logo"></a>
+       </div>
 
-      <!-- <div class="secondary-menu">
-        <div class="menu-container">
-          <div class="wrapper">
-            <div class="menu-item">
-              <a href="#">Speaker</a>
-              <div class="menu-item-revealer"></div>
-            </div>
 
-            <div class="menu-item">
-              <a href="#">Blog</a>
-              <div class="menu-item-revealer"></div>
-            </div>
-
-            <div class="menu-item">
-              <a href="#">Contact</a>
-              <div class="menu-item-revealer"></div>
-            </div>
-          </div>
-
-          <div class="wrapper">
-            <div class="menu-item">
-              <a href="#">Credits</a>
-              <div class="menu-item-revealer"></div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-    </div>
+      <!-- svg overlay -->  
+      <div class="cursor"></div>
+  </div>
+    
+    
 
     <section id="profile">
         <div class="section__pic-container">
@@ -91,95 +87,22 @@
             <p class="section__text__p1">Hello, I'm</p>
             <h1 class="title">Carlo Bebero</h1>
             <p class="section__text__p2">Frontend Developer</p>
-            <!-- <div class="btn-container">
+            <div class="btn-container">
                 <button class="btn btn-color-2" onclick="window.open('.assets/resume-example.pdf')">Download CV</button>
                 <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Me</button>
             </div>
             <div id="socials-container">
                 <img src="./assets/linkedin.png" alt="My linkedIn profile" class="icon" onclick="location.href='https://linkedin.com/'">
                 <img src="./assets/github.png" alt="My GitHub profile" class="icon" onclick="location.href='https://github.com/'">
-            </div> -->
+            </div>
         </div>
     </section>
+</div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.1/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/CSSRulePlugin.min.js"></script>
-  <script>
-    // setup
-    const tl = gsap.timeline({ paused: true });
-    let path = document.querySelector("path");
-    var spanBefore = CSSRulePlugin.getRule("#hamburger span:before");
-
-    gsap.set(spanBefore, { background: "#000" });
-    gsap.set(".menu", { visibility: "hidden" });
-
-    // toggle menu
-    function revealMenu() {
-      revealMenuItems();
-
-      const hamburger = document.getElementById("hamburger");
-      const toggleBtn = document.getElementById("toggle-btn");
-
-      toggleBtn.onclick = function (e) {
-        hamburger.classList.toggle("active");
-        tl.reversed(!tl.reversed());
-      };
-    }
-
-    revealMenu();
-
-    // how to reveal
-    function revealMenuItems() {
-      const start = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
-      const end = "M0,1005S175,995,500,995s500,5,500,5V0H0Z";
-      const power4 = "power4.inOut";
-      const power2 = "power2.inOut";
-
-      tl.to("#hamburger", 1.25, {
-        marginTop: "-5px",
-        x: -40,
-        y: 40,
-        ease: power4,
-      });
-
-      tl.to("#hamburger span", 1, { background: "#e2e2dc", ease: power2 }, "<");
-      tl.to(spanBefore, 1, { background: "#e2e2dc", ease: power2 }, "<");
-
-      tl.to(
-        ".btn .btn-outline",
-        1.25,
-        {
-          x: -40,
-          y: 40,
-          width: "140px",
-          height: "140px",
-          border: "1px solid #e2e2dc",
-          ease: power4,
-        },
-        "<"
-      );
-
-      tl.to(path, 0.8, { attr: { d: start }, ease: Power2.easeIn }, "<").to(
-        path,
-        0.8,
-        { attr: { d: end }, ease: Power2.easeOut },
-        "-=0.5"
-      );
-
-      tl.to(".menu", 1, { visibility: "visible" }, "-=0.5");
-
-      tl.to(
-        ".menu-item > a",
-        1,
-        {
-          top: 0,
-          ease: "power3.out",
-          stagger: {
-            amount: 0.5,
-          },
-        },
-        "-=1"
-      ).reverse();
-    }
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/CSSRulePlugin.min.js"></script>
+  <script src="script.js"></script>
 </html>
