@@ -90,8 +90,8 @@
 
 /* PROFILE SECTION  */
 .text {
-  top: 15vw;
-  left: 35vw;
+  top: 25%;
+  left: 36.5%;
   z-index: -1;
   font-weight: 300;
   color:var(--overlay-bg);
@@ -387,7 +387,7 @@ nav > div {
   left: 0;
   width: 100vw;
   z-index: 1;
-  height: 78vh;
+  height: 100vh;
   display: flex;
   background: #181717;
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
@@ -478,8 +478,8 @@ nav > div {
 }
 .marquee span {
   /* font-family: "Formula Condensed"; */
-  font-family: "Ojuju", sans-serif;
-  /* font-family: "Sorts Mill Goudy", serif; */
+  /* font-family: "Ojuju", sans-serif; */
+  font-family: "Sorts Mill Goudy", serif;
   text-transform: uppercase;
   /* font-weight: 400; */
   color: var(--base-text);
@@ -500,16 +500,18 @@ nav > div {
 
 .marquee-one {
   width: 100%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   white-space: nowrap;
   overflow: hidden;
+  height: 10.3vw;
   /* padding-top: -10rem; */
   background-color: var(--overlay-bg);
 }
 
 .marquee-one span {
-  font-family: "Ojuju", sans-serif;
-  font-weight: 700;
+  /* font-family: "Ojuju", sans-serif; */
+  font-family: "Sorts Mill Goudy", serif;
+  /* font-weight: 700; */
   color:  var(--bg);
   font-size: 8vw;
   text-transform: uppercase;

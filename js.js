@@ -215,7 +215,7 @@ window.addEventListener('mousemove', editCursor);
 gsap.from(".blob", 2, {
   scale: .5,
   ease: "power3.inOut",
-  delay: 3,
+  delay: 2,
   stagger: {
     amount: 0.5,
   },
@@ -245,7 +245,7 @@ function startLoader() {
         return;
       }
 
-      currentValue += Math.floor(Math.random() * 50) + 1;
+      currentValue += Math.floor(Math.random() * 60) + 1;
 
       if (currentValue > 100) {
         currentValue = 100;
@@ -281,24 +281,24 @@ function startLoader() {
     delay: 0.3,
   });
 
-  gsap.to(".circles", 1.5, {
-    rotation: 360,
+  gsap.to(".circles", 1, {
+    rotation: 720,
     ease: "power4.inOut",
     delay: 0.4,
   });
 
-  gsap.to(".block", 0.50, {
-    display: "block",
-    height: "200px",
-    ease: "power4.inOut",
-    delay: 0.5,
-  });
+  // gsap.to(".block", 0.50, {
+  //   display: "block",
+  //   height: "200px",
+  //   ease: "power4.inOut",
+  //   delay: 0.5,
+  // });
 
-  gsap.to(".block", 0.50, {
-    width: "800px",
-    ease: "power4.inOut",
-    delay: 0.6,
-  });
+  // gsap.to(".block", 0.50, {
+  //   width: "800px",
+  //   ease: "power4.inOut",
+  //   delay: 0.6,
+  // });
 
   gsap.fromTo(
     ".container",
@@ -319,18 +319,18 @@ function startLoader() {
     }
   );
 
-  gsap.to(".block", .75, {
-    width: "0px",
-    ease: "power4.inOut",
-    delay: 0.9,
-  });
+  // gsap.to(".block", .75, {
+  //   width: "0px",
+  //   ease: "power4.inOut",
+  //   delay: 0.9,
+  // });
 
-  gsap.to(".block", 0.75, {
-    display: "block",
-    height: "0px",
-    ease: "power4.inOut",
-    delay: 1,
-  });
+  // gsap.to(".block", 0.75, {
+  //   display: "block",
+  //   height: "0px",
+  //   ease: "power4.inOut",
+  //   delay: 1,
+  // });
 
   gsap.to(".circles", 1.5, {
     rotation: 0,
