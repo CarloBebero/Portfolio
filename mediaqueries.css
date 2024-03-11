@@ -1,12 +1,12 @@
 @media screen and (max-width: 1400px) {
-    #profile {
+    /* #profile {
         height: 100vh;
         margin-bottom: 6rem;
-    }
+    } */
 }
 
 @media screen and (max-width: 1200px) {
-    #profile, .section-container {
+    /* #profile, .section-container {
         display: block;
     }
 
@@ -22,14 +22,14 @@
         width: 275px;
         height: 275px;
         margin: 0 auto 2rem;
-    }
+    } */
 
     .overlay {
         width: 100vw;
-        height: 200vh;
+        height: 90vh;
     }
 
-    .primary-menu a {
+    /* .primary-menu a {
         font-size: 118px;
     }
 
@@ -54,15 +54,15 @@
 
     .secondary-menu .menu-item a {
         font-size: .1px;
-    }
+    } */
 }
 
 @media screen and (max-width: 600px) {
-    #profile {
+    /* #profile {
         padding-top: 150px;
         height: 50vh;
         margin-bottom: 0;
-    }
+    } */
 
     .menu {
         width: 200vw;
@@ -112,12 +112,12 @@
         cursor: pointer;
     }
 
-    .section__pic-container {
-        /* top: 300px; */
+    /* .section__pic-container {
+        top: 300px;
         width: auto;
         height: 50vw;
         justify-content: center;
-    }
+    } */
 
     .section__text-p2 {
         font-size: 1.25rem;
