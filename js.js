@@ -1,4 +1,60 @@
 // setup
+
+
+
+const tl = gsap.timeline();
+
+      function myFunction() {
+        tl.to(".pre-loader", 1, {
+          opacity: 0,
+          display: "none",
+          ease: "power2.inOut",
+        });
+
+        tl.to(
+          ".header-row",
+          0.8,
+          {
+            top: "0",
+            ease: "power4.inOut",
+            stagger: {
+              amount: 0.2,
+            },
+          },
+          "-=1.2"
+        );
+
+        tl.from(
+          ".navbar > *, .footer",
+          2,
+          {
+            y: "40",
+            opacity: 0,
+            ease: "power4.inOut",
+            stagger: {
+              amount: 0.2,
+            },
+          },
+          "-=1"
+        );
+      }
+
+      tl.to(".header > h1", 2, {
+        top: "0",
+        ease: "power3.inOut",
+        stagger: {
+          amount: 0.3,
+        },
+      }).to(".pre-loader-btn", 0.3, {
+        opacity: 1,
+        delay: 2,
+      });
+
+
+
+
+
+
 // gsap.from(".marquee", 1, {
 //   bottom: "-10em",
 //   ease: "power4.out",
@@ -172,6 +228,17 @@ gsap.to(".text", 20, {
   repeat: -1,
 });
 
+gsap.from(".text-two", 2, {
+  scale: 5,
+  ease: "power4.out",
+  delay: 0,
+});
+
+gsap.to(".text-two", 20, {
+  rotation: "360",
+  ease: Linear.easeNone,
+  repeat: -1,
+});
 
 
 // gsap.from(".marquee", 1, {
@@ -282,7 +349,7 @@ function startLoader() {
   });
 
   gsap.to(".circles", 1, {
-    rotation: 720,
+    rotation: 420,
     ease: "power4.inOut",
     delay: 0.4,
   });

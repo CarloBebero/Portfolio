@@ -92,8 +92,8 @@
 
       <!-- svg overlay -->  
       <section id="profile">
-        <div class="text">
-          <svg viewBox="0 0 100 100" width="520" height="520">
+        <!-- <div class="text">
+          <svg viewBox="0 0 100 100" width="510" height="510">
             <defs>
               <path
                 id="circle"
@@ -109,10 +109,27 @@
                 vitocone vitocone vitocone vitocone
             </text>
           </svg>
-        </div>
+        </div> -->
 
         <div class="section__pic-container">
-          <div class="blob-1 blob"></div>
+          <div class="blob-1 blob"><div class="text">
+            <svg viewBox="0 0 100 100">
+              <defs>
+                <path
+                  id="circle"
+                  d="
+                    M 50, 50
+                    m -37, 0
+                    a 37,37 0 1,1 74,0
+                    a 37,37 0 1,1 -74,0"
+                />
+              </defs>
+              <text>
+                <textPath xlink:href="#circle">
+                  vitocone vitocone vitocone vitocone
+              </text>
+            </svg>
+          </div></div>
             <!-- <img src="./assets/Profile.png" alt="Carlo Profile picture"> -->
         </div>
         <!-- <div class="contact-details col"> -->
