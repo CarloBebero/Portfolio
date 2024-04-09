@@ -129,7 +129,7 @@ const editCursor = e => {
     cursorOutline.animate({
           left: x + 'px',
           top: y + 'px'
-      }, { duration: 100, fill: "forwards"});
+      }, { duration: 0, fill: "forwards"});
 };
 
 link.forEach(b => b.addEventListener('mousemove', animateit));
