@@ -28,27 +28,43 @@ gsap.fromTo(
   ".container",
   {
     duration: 2,
-    scale: 0,
+    scale: 1,
     ease: "power4.inOut",
     delay: 0.7,
+    transform: "translateX(100%)",
   },
   {
     duration: 2,
-    left: "50%",
-    scale: 0,
-    transform: "translateX(-50%)",
+    scale: 1,
     ease: "power4.inOut",
     delay: 0.8,
   }
 );
 gsap.to(".loader", 2.5, {
-  scale: 0,
+  scale: 1,
+  transform: "translateX(-100%)",
   ease: "power4.inOut",
   delay: 1.2,
 });
 
 gsap.to(".container", 2, {
   scale: 1,
+  transform: "translateX(0%)",
+  ease: "power4.inOut",
+  delay: 1.3,
+});
+
+
+gsap.to(".preloader", 2.5, {
+  scale: 1,
+  transform: "translateX(-100%)",
+  ease: "power4.inOut",
+  delay: 1.2,
+});
+
+gsap.to(".container", 2, {
+  scale: 1,
+  transform: "translateX(0%)",
   ease: "power4.inOut",
   delay: 1.3,
 });
@@ -94,11 +110,11 @@ gsap.from(".scale", 2, {
   delay: 2.5,
   });
   
-  // gsap.to(".title", 20, {
-  // rotation: "360",
-  // ease: Linear.easeNone,
-  // repeat: -1,
-  // });
+  gsap.to(".title", 20, {
+  rotation: "360",
+  ease: Linear.easeNone,
+  repeat: -1,
+  });
 
 
 (function () {
@@ -106,30 +122,36 @@ gsap.from(".scale", 2, {
 let link = document.querySelectorAll('#hover-this');
 let cursor = document.querySelector('.cursor');
 let cursorOutline = document.querySelector('.cursor-outline');
+let cursorTrail= document.querySelector('.cursor-trail');
 
 const animateit = function (e) {
-    const span = this.querySelector('span');
-    const { offsetX: x, offsetY: y } = e,
-    { offsetWidth: width, offsetHeight: height } = this,
+  const span = this.querySelector('span');
+  const { offsetX: x, offsetY: y } = e,
+  { offsetWidth: width, offsetHeight: height } = this,
 
-    move = 80,
-    xMove = x / width * (move * 2) - move,
-    yMove = y / height * (move * 2) - move;
+  move = 25,
+  xMove = x / width * (move * 2) - move,
+  yMove = y / height * (move * 2) - move;
 
-    span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+  span.style.transform = `translate(${xMove}px, ${yMove}px)`;
 
-    if (e.type === 'mouseleave') span.style.transform = '';
+  if (e.type === 'mouseleave') span.style.transform = '';
 };
 
 const editCursor = e => {
-    const { clientX: x, clientY: y } = e;
-    cursor.style.left = x + 'px';
-    cursor.style.top = y + 'px';
+  const { clientX: x, clientY: y } = e;
+  cursor.style.left = x + 'px';
+  cursor.style.top = y + 'px';
 
-    cursorOutline.animate({
-          left: x + 'px',
-          top: y + 'px'
-      }, { duration: 0, fill: "forwards"});
+  cursorOutline.animate({
+        left: x + 'px',
+        top: y + 'px'
+    }, { duration: 0, fill: "forwards"});
+
+    cursorTrail.animate({
+      left: x + 'px',
+      top: y + 'px'
+  }, { duration: 2000, fill: "forwards"});
 };
 
 link.forEach(b => b.addEventListener('mousemove', animateit));
@@ -153,3 +175,4 @@ link.addEventListener('mouseleave', ()=>{
 });
 
 });
+
